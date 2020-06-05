@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+        padding:0;
+        margin:0;
+        position: relative;
+        margin-top: 90px;
+        height: max-content;
+        width: 40%;
+        padding:23px;
+        display: flex;
+        border: 1px solid black;
+        flex-direction: column;
+   
+        
+        
+    }
+
+    .container{
+        height:max-content;
+        margin: 0;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid black;
+        position: relative;
+    }
+    input[type="text"],input[type="password"],input[type="email"],select{
+        width: 60%;
+        margin-top: 20px;
+        padding: 10px;
+        text-align: center;
+        font-size: 23px;
+        border-radius:5px;
+        align-self: center;
+        border: 1px solid gray;
+    }
+   input[type="submit"]{
+       width: 20%;
+       align-self: center;
+       margin-top: 20px;
+       padding: 12px;
+       background-color:blue;
+       border-radius: 6px;
+       border: none;
+       color: white;
+   }
+    form{
+        padding:0;
+        margin:0;
+        position: relative;
+        margin-top: 90px;
+        height: max-content;
+        width: 40%;
+        padding:23px;
+        display: flex;
+        border: 1px solid black;
+        flex-direction: column;
+   
+        
+        
+    }
+
+    .container{
+        height:max-content;
+        margin: 0;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid black;
+        position: relative;
+    }
+    input[type="text"],input[type="password"],input[type="email"]{
+        width: 60%;
+        margin-top: 20px;
+        padding: 10px;
+        text-align: center;
+        font-size: 23px;
+        border-radius:5px;
+        align-self: center;
+        border: 1px solid gray;
+    }
+   input[type="submit"]{
+       width: 20%;
+       align-self: center;
+       margin-top: 20px;
+       padding: 12px;
+       background-color:blue;
+       border-radius: 6px;
+       border: none;
+       color: white;
+   }
+
+   .bar{
+       position: absolute;
+       width:40%;
+       background-color: blue;
+       color:white;
+       padding: 12px;
+       height:57px;
+       top:40px;
+       border-radius: 12px  12px 0  0;
+       text-align:center;
+       font-size:33px;
+       font-weight: bold;
+   }
+    </style>
+       border-radius: 12px  12px 0  0;
+       text-align:center;
+       font-size:33px;
+       font-weight: bold;
+   }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="bar"> CREATE NEW GOAL</div>
+    <form action="" method="POST">
+    
+    {%csrf_token%}
+    {{form}}
+    
+    <input type="submit">
+    </form>
+    </div>
+</body>
+</html>

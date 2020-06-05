@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        margin:0;
+        padding:0;
+    }
+   
+     form{
+         margin-top: 100px;
+         height: max-content;
+         width: 40%;
+         padding:20px;
+         display: flex;
+         border: 1px solid black;
+         flex-direction: column;
+    
+         
+         
+     }
+
+     .container{
+         height:max-content;
+         margin: 0;
+         padding: 30px;
+         display: flex;
+         justify-content: center;
+     }
+     input[type="text"],input[type="password"]{
+         width: 60%;
+         margin-top: 20px;
+         padding: 10px;
+         text-align: center;
+         font-size: 23px;
+         border-radius:5px;
+         align-self: center;
+         border: 1px solid gray;
+     }
+    input[type="submit"]{
+        width: 20%;
+        align-self: center;
+        margin-top: 20px;
+        padding: 12px;
+        background-color:blue;
+        border-radius: 6px;
+        border: none;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+{%if form.errors%} <p> <strong>invalid login credentials </strong> </p>{%endif%}
+<div class="container">
+
+
+<form action="" method="POST">
+{% csrf_token %}
+<input type="text" name="username" placeholder=" username"> 
+<input type="password"name="password" placeholder="password"> 
+<input type="submit">
+</form>
+
+</div>
+<a href="{% url 'index' %}"> index page </a>
+</body>
+</html>

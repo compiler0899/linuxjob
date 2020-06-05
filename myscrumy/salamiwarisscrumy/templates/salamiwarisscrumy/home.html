@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+     .container{
+         height:max-content;
+         margin: 0;
+         padding: 30px;
+         display: flex;
+         justify-content: center;
+     }
+
+        table,th,td{
+            border:1px solid black;
+            border-collapse:collapse;
+            padding:12px;
+        }
+        .liv{
+            position:relative;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+ <h1 style="text-align:center;"> SCRUMY BOARD </h1>
+
+    <div class="container">
+   
+    <table>
+    <tr>
+    <th>User</th>
+    <th>Weekly Goal</th>
+    <th>Daily Goals</th>
+    <th>Verify Goals</th>
+    <th>Done Goals</th>
+    </tr>
+
+
+
+{%for current in Users%}
+    <tr>
+    
+  <td>{{current}}  </td>
+    
+
+    <td>{%for wek in current.gow.all%}
+        {%if wek in weeklygoal%}
+        {{wek.goal_name}} : {{wek.goal_id}}
+        {%endif%}
+        {%endfor%}
+    
+    
+    
+    </td>
+    <td>{%for wek in current.gow.all%}
+        {%if wek in daily%}
+        {{wek.goal_name}} :{{wek.goal_id}}
+        {%endif%}
+        {%endfor%}</td>
+
+    <td>{%for wek in current.gow.all%}
+        {%if wek in verify%}
+        {{wek.goal_name}}
+        {%endif%}
+        {%endfor%}</td>
+
+    <td>{%for wek in current.gow.all%}
+        {%if wek in done%}
+        {{wek.goal_name}}
+        {%endif%}
+        {%endfor%}</td>
+    
+    </tr>
+{%endfor%}
+
+
+    </table>
+    </div>
+</body>
+</html>
