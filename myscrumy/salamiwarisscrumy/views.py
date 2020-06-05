@@ -9,7 +9,11 @@ from django.shortcuts import render
 from .form import SignupForm,CreateGoalForm
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import Group
-GroupDev=Group.objects.
+GroupDev=Group.objects.get(name="Developer")
+GroupAdmin=Group.objects.get(name='Admin')
+GroupQuality=Group.objects.get(name='Quality Assurance')
+GroupOwner=Group.objects.get(name='owner')
+
 
 
 def index(request):
@@ -41,7 +45,7 @@ def move_goal(request,goal_id):
         verify = models.GoalStatus.objects.get(status_name="Verify Goal")
         done =models.GoalStatus.objects.get(status_name="Done Goal")
         ActiveUser = request.user
-        Group
+        If ActiveUser.group
 
 def add_goal(request):
     
